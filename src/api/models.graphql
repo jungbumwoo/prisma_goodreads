@@ -1,7 +1,7 @@
 type User {
-  id: ID! @id @unique
-  username: String! @unique
-  email: String! @unique
+  id: ID!
+  username: String!
+  email: String! 
   firstName: String 
   lastName: String
   keeplist: String!
@@ -10,7 +10,7 @@ type User {
 }
 
 type Book {
-  id: ID! @id @unique
+  id: ID! 
   title: String!
   author: String!
   pubDate: String!
@@ -22,7 +22,7 @@ type Book {
 }
 
 type Review {
-  id: ID! @id @unique
+  id: ID! 
   score: Int
   context: String
 }
