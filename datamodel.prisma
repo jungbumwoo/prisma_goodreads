@@ -1,29 +1,9 @@
 type User {
-  id: ID! @id @unique
-  username: String! @unique
-  email: String! @unique
-  firstName: String 
-  lastName: String
-  keeplist: [Book]
-  uploadlist: [Book]
-  reviewlist: [Review]
+  id: ID! @id
+  profile: Profile! @relation(link: INLINE)
 }
 
-type Book {
-  id: ID! @id @unique
-  title: String!
-  author: String!
-  pubDate: String!
-  priceStandard: Int
-  coverSmallUrl: String
-  publisher: String
-  description: String
-  stars: Int
+type Profile {
+  id: ID! @id
+  user: User!
 }
-
-type Review {
-  id: ID! @id @unique
-  score: Int
-  context: String
-}
-

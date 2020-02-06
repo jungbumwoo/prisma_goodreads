@@ -1,29 +1,9 @@
 type User {
-  id: ID!
-  username: String!
-  email: String! 
-  firstName: String 
-  lastName: String
-  keeplist: [Book]
-  uploadlist: [Book]
-  reviewlist: [Review]
-}
-
-type Book {
   id: ID! 
-  title: String!
-  author: String!
-  pubDate: String!
-  priceStandard: Int
-  coverSmallUrl: String
-  publisher: String
-  description: String
-  stars: Int
+  profile: Profile! 
 }
 
-type Review {
+type Profile {
   id: ID! 
-  score: Int
-  context: String
+  user: User!
 }
-
