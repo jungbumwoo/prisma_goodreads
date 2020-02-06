@@ -1,9 +1,22 @@
 type User {
   id: ID! 
-  profile: Profile! 
+  username: String! 
+  email: String! 
+  firstName: String
+  lastName: String
+  uploadlist: [Book!] 
 }
 
-type Profile {
+type Book {
   id: ID! 
-  user: User!
+  title: String!
+  author: String!
+  pubDate: String!
+  priceStandard: Int
+  coverSmallUrl: String
+  publisher: String
+  description: String
+  stars: Int
+  uploadbylist: User!
 }
+

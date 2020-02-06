@@ -17,7 +17,6 @@ type User {
   lastName: String
   keeplist: [Book] @relation(name: "Keepbook")
   uploadlist: [Book] @relation(name: "Uploadbook")
-  reviewlist: [Review] @relation(name: "Goreview")
 }
 
 type Book {
