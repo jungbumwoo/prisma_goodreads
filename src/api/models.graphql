@@ -4,7 +4,8 @@ type User {
   email: String! 
   firstName: String
   lastName: String
-  uploadlist: [Book!] 
+  uploadlist: [Book!]
+  keeplist: [BOOK!]
 }
 
 type Book {
@@ -17,6 +18,7 @@ type Book {
   publisher: String
   description: String
   stars: Int
-  uploadbylist: User!
+  uploadbylist: User! 
+  keepedBy: [USER!] 
 }
 

@@ -4,7 +4,8 @@ type User {
   email: String! @unique
   firstName: String
   lastName: String
-  uploadlist: [Book!] 
+  uploadlist: [Book!]
+  keeplist: [BOOK!]
 }
 
 type Book {
@@ -18,5 +19,6 @@ type Book {
   description: String
   stars: Int
   uploadbylist: User! @relation(link: INLINE)
+  keepedBy: [USER!] @relation(link: TABLE)
 }
 
