@@ -5,20 +5,28 @@ type User {
   firstName: String
   lastName: String
   uploadlist: [Book!]
-  keeplist: [BOOK!]
+  keeplist: [BOOK!]!
 }
 
 type Book {
   id: ID! 
   title: String!
   author: String!
-  pubDate: String!
+  pubDate: DateTime!
   priceStandard: Int
   coverSmallUrl: String
   publisher: String
   description: String
   stars: Int
-  uploadbylist: User! 
-  keepedBy: [USER!] 
+  uploadedbylist: User! 
+  keepedBy: [USER!]!
 }
+
+type Reveiw {
+  id: ID! 
+  title: String!
+  contents: String!
+  writtenby: User! 
+}
+
 

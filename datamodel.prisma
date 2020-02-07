@@ -5,20 +5,28 @@ type User {
   firstName: String
   lastName: String
   uploadlist: [Book!]
-  keeplist: [BOOK!]
+  keeplist: [BOOK!] @relation(name:"Keep")
+  reviewlist : [Reveiw]
 }
-
 type Book {
   id: ID! @id @unique
   title: String!
   author: String!
-  pubDate: String!
+  pubDate: DateTime!
   priceStandard: Int
   coverSmallUrl: String
   publisher: String
   description: String
   stars: Int
-  uploadbylist: User! @relation(link: INLINE)
-  keepedBy: [USER!] @relation(link: TABLE)
+  uploadedby: User! @relation(link: INLINE, name:"Upload")
+  keepedBy: [USER!] @relation(name:"Keep")
+  gotreview: [Reveiw!]!
+}
+
+type Reveiw {
+  id: ID! @id @unique
+  title: String!
+  contents: String!
+  writtenby: User! @relation(link: INLINE, name:"Review")
 }
 
