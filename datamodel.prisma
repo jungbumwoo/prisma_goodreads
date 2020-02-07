@@ -4,9 +4,10 @@ type User {
   email: String! @unique
   firstName: String
   lastName: String
-  uploadlist: [Book!]
-  keeplist: [BOOK!] @relation(name:"Keep")
-  reviewlist : [Reveiw]
+  uploadlist: [Book!] @relation(link: INLINE, name:"Upload")
+  keeplist: [Book!] @relation(name:"Keep")
+  reviewlist : [Reveiw] @relation(link: INLINE, name:"Review")
+}
 }
 type Book {
   id: ID! @id @unique
@@ -19,7 +20,7 @@ type Book {
   description: String
   stars: Int
   uploadedby: User! @relation(link: INLINE, name:"Upload")
-  keepedBy: [USER!] @relation(name:"Keep")
+  keepedBy: [User!] @relation(name:"Keep")
   gotreview: [Reveiw!]!
 }
 
