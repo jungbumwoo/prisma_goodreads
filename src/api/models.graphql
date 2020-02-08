@@ -1,15 +1,15 @@
 type User {
-  id: ID! 
-  username: String! 
-  email: String! 
+  id: ID! @id @unique
+  username: String! @unique
+  email: String! @unique
   firstName: String
   lastName: String
-  uploadlist: [Book!]
-  keeplist: [BOOK!]!
+  uploadlist: [Book!] 
+  keeplist: [Book!]
 }
 
 type Book {
-  id: ID! 
+  id: ID! @id @unique
   title: String!
   author: String!
   pubDate: DateTime!
@@ -18,15 +18,7 @@ type Book {
   publisher: String
   description: String
   stars: Int
-  uploadedbylist: User! 
-  keepedBy: [USER!]!
+  uploadedby: User! 
+  keepedBy: [User!]
 }
-
-type Reveiw {
-  id: ID! 
-  title: String!
-  contents: String!
-  writtenby: User! 
-}
-
 
