@@ -4,8 +4,9 @@ type User {
   email: String! @unique
   firstName: String
   lastName: String
-  uploadlist: [Book!] 
-  keeplist: [Book!]
+  makereviewlist: [Review!] 
+  uploadlist: [Book!]
+  keeplist: [Book!] 
 }
 
 type Book {
@@ -18,7 +19,16 @@ type Book {
   publisher: String
   description: String
   stars: Int
-  uploadedby: User! 
-  keepedBy: [User!]
+  gotreview: [Review!]
+  uploadlist: User!
+  keepedBy: [User!] 
 }
 
+type Review {
+  id: ID! @id @unique
+  title: String!
+  content: String!
+  rate: Int!
+  reviewby: User! 
+  reviewedat: Book! 
+}
