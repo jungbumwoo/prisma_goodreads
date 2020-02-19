@@ -13,7 +13,6 @@ type Book {
   id: ID! @id @unique
   title: String!
   author: String!
-  pubDate: DateTime!
   priceStandard: Int
   coverSmallUrl: String
   publisher: String

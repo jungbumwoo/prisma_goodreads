@@ -1,7 +1,7 @@
 type User {
-  id: ID! @id @unique
-  username: String! @unique
-  email: String! @unique
+  id: ID! 
+  username: String! 
+  email: String! 
   firstName: String
   lastName: String
   makereviewlist: [Review!] 
@@ -10,10 +10,9 @@ type User {
 }
 
 type Book {
-  id: ID! @id @unique
+  id: ID! 
   title: String!
   author: String!
-  pubDate: DateTime!
   priceStandard: Int
   coverSmallUrl: String
   publisher: String
@@ -25,7 +24,7 @@ type Book {
 }
 
 type Review {
-  id: ID! @id @unique
+  id: ID! 
   title: String!
   content: String!
   rate: Int!

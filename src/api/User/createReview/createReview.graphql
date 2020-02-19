@@ -1,0 +1,7 @@
+type Mutation{
+    createReview(
+    title: String!
+    content: String!
+    rate: Int!
+    ): Review!
+}
