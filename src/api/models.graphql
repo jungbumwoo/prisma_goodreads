@@ -10,7 +10,7 @@ type User {
 }
 
 type Book {
-  id: ID! 
+  id: ID!
   title: String!
   author: String!
   priceStandard: Int
@@ -18,8 +18,9 @@ type Book {
   publisher: String
   description: String
   stars: Int
+  pubdate: String
   gotreview: [Review!]
-  uploadlist: User!
+  uploadedby: User
   keepedBy: [User!] 
 }
 

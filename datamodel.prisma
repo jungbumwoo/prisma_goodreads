@@ -18,8 +18,9 @@ type Book {
   publisher: String
   description: String
   stars: Int
+  pubdate: String
   gotreview: [Review!] @relation(name: "ReviewAtBook")
-  uploadlist: User! @relation(link: INLINE, name: "Uploadlist")
+  uploadedby: User @relation(link: INLINE, name: "Uploadlist")
   keepedBy: [User!] @relation(link: TABLE, name:"Keeplist")
 }
 
